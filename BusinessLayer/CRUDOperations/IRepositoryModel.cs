@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Training.DAL
+namespace BusinessLayer.CRUDOperations
 {
-    interface IRepositoryModel<T> where T : class
+    public interface IRepositoryModel<T> where T : class
     {
         IEnumerable<T> getModel();
         T getModelById(int modelId);

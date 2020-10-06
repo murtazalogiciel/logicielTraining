@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Training.DAL;
+using BusinessLayer.CRUDOperations;
+using DataLayer.Context;
 using Training.Models;
-using Training.Context;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Training.Controllers
@@ -27,30 +27,35 @@ namespace Training.Controllers
 
       
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Employee Get(int id)
         {
-            return Trader.categories[id];
+            return _irepositoryModel.getModelById(id);
         }
 
        
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Employee value)
         {
-            Trader.categories.Add(value);
+            _irepositoryModel.insertModel(value);
+            _irepositoryModel.Save();
         }
 
        
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put( [FromBody] Employee value)
         {
-            Trader.categories.Insert(id, value);
+
+            _irepositoryModel.updateModel(value);
+            _irepositoryModel.Save();
         }
 
        
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            Trader.categories.RemoveAt(id);
+            _irepositoryModel.deleteModel(id);
+            _irepositoryModel.Save();
+            
         }
     }
 }

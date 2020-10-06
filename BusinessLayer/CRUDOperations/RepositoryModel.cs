@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Training.Context;
+using DataLayer.Context;
 
 
-namespace Training.DAL
+namespace BusinessLayer.CRUDOperations
 {
     public class Repositorymodel<T> : IRepositoryModel<T> where T : class
     {

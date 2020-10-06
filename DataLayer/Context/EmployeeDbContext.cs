@@ -3,8 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataLayer.Context;
 
-namespace Training.Context
+namespace DataLayer.Context
 {
     public class EmployeeDbContext:DbContext
     {
