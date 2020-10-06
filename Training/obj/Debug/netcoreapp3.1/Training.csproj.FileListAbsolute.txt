@@ -72,11 +72,10 @@ C:\Users\Logiciel 8\source\repos\Training\Training\bin\Debug\netcoreapp3.1\runti
 C:\Users\Logiciel 8\source\repos\Training\Training\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Logiciel 8\source\repos\Training\Training\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Logiciel 8\source\repos\Training\Training\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Logiciel 8\source\repos\Training\Training\obj\Debug\netcoreapp3.1\Training.csprojAssemblyReference.cache
 C:\Users\Logiciel 8\source\repos\Training\Training\obj\Debug\netcoreapp3.1\Training.csproj.CoreCompileInputs.cache
 C:\Users\Logiciel 8\source\repos\Training\Training\obj\Debug\netcoreapp3.1\Training.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Logiciel 8\source\repos\Training\Training\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
-C:\Users\Logiciel 8\source\repos\Training\Training\bin\Debug\netcoreapp3.1\EntityFramework.dll
-C:\Users\Logiciel 8\source\repos\Training\Training\bin\Debug\netcoreapp3.1\System.CodeDom.dll
-C:\Users\Logiciel 8\source\repos\Training\Training\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
-C:\Users\Logiciel 8\source\repos\Training\Training\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\Logiciel 8\source\repos\Training\Training\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Logiciel 8\source\repos\Training\Training\bin\Debug\netcoreapp3.1\BusinessLogicLayer.dll
+C:\Users\Logiciel 8\source\repos\Training\Training\bin\Debug\netcoreapp3.1\DataAccessLayer.dll
+C:\Users\Logiciel 8\source\repos\Training\Training\bin\Debug\netcoreapp3.1\BusinessLogicLayer.pdb
+C:\Users\Logiciel 8\source\repos\Training\Training\bin\Debug\netcoreapp3.1\DataAccessLayer.pdb

@@ -4,14 +4,14 @@
     "C:\\Users\\Logiciel 8\\source\\repos\\Training\\Training\\Training.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Logiciel 8\\source\\repos\\Training\\BusinessLayer\\BusinessLayer.csproj": {
+    "C:\\Users\\Logiciel 8\\source\\repos\\Training\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Logiciel 8\\source\\repos\\Training\\BusinessLayer\\BusinessLayer.csproj",
-        "projectName": "BusinessLayer",
-        "projectPath": "C:\\Users\\Logiciel 8\\source\\repos\\Training\\BusinessLayer\\BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Logiciel 8\\source\\repos\\Training\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
+        "projectName": "BusinessLogicLayer",
+        "projectPath": "C:\\Users\\Logiciel 8\\source\\repos\\Training\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
         "packagesPath": "C:\\Users\\Logiciel 8\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Logiciel 8\\source\\repos\\Training\\BusinessLayer\\obj\\",
+        "outputPath": "C:\\Users\\Logiciel 8\\source\\repos\\Training\\BusinessLogicLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Logiciel 8\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -20,7 +20,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.0"
+          "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\DevExpress 19.2\\.NET Core Desktop Libraries\\System\\Components\\Packages": {},
@@ -29,10 +29,10 @@
           "https://nuget.telerik.com/nuget": {}
         },
         "frameworks": {
-          "netstandard2.0": {
+          "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Logiciel 8\\source\\repos\\Training\\DataLayer\\DataLayer.csproj": {
-                "projectPath": "C:\\Users\\Logiciel 8\\source\\repos\\Training\\DataLayer\\DataLayer.csproj"
+              "C:\\Users\\Logiciel 8\\source\\repos\\Training\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\Logiciel 8\\source\\repos\\Training\\DataAccessLayer\\DataAccessLayer.csproj"
               }
             }
           }
@@ -44,13 +44,21 @@
         }
       },
       "frameworks": {
-        "netstandard2.0": {
+        "netcoreapp3.1": {
           "dependencies": {
-            "NETStandard.Library": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
+              "version": "[3.1.8, )"
             }
           },
           "imports": [
@@ -63,18 +71,23 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Logiciel 8\\source\\repos\\Training\\DataLayer\\DataLayer.csproj": {
+    "C:\\Users\\Logiciel 8\\source\\repos\\Training\\DataAccessLayer\\DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Logiciel 8\\source\\repos\\Training\\DataLayer\\DataLayer.csproj",
-        "projectName": "DataLayer",
-        "projectPath": "C:\\Users\\Logiciel 8\\source\\repos\\Training\\DataLayer\\DataLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Logiciel 8\\source\\repos\\Training\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectName": "DataAccessLayer",
+        "projectPath": "C:\\Users\\Logiciel 8\\source\\repos\\Training\\DataAccessLayer\\DataAccessLayer.csproj",
         "packagesPath": "C:\\Users\\Logiciel 8\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Logiciel 8\\source\\repos\\Training\\DataLayer\\obj\\",
+        "outputPath": "C:\\Users\\Logiciel 8\\source\\repos\\Training\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Logiciel 8\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -83,7 +96,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.0"
+          "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\DevExpress 19.2\\.NET Core Desktop Libraries\\System\\Components\\Packages": {},
@@ -92,7 +105,7 @@
           "https://nuget.telerik.com/nuget": {}
         },
         "frameworks": {
-          "netstandard2.0": {
+          "netcoreapp3.1": {
             "projectReferences": {}
           }
         },
@@ -103,17 +116,21 @@
         }
       },
       "frameworks": {
-        "netstandard2.0": {
+        "netcoreapp3.1": {
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.8, )"
             },
-            "NETStandard.Library": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
+              "version": "[3.1.8, )"
             }
           },
           "imports": [
@@ -126,6 +143,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
@@ -157,11 +179,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Logiciel 8\\source\\repos\\Training\\BusinessLayer\\BusinessLayer.csproj": {
-                "projectPath": "C:\\Users\\Logiciel 8\\source\\repos\\Training\\BusinessLayer\\BusinessLayer.csproj"
+              "C:\\Users\\Logiciel 8\\source\\repos\\Training\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
+                "projectPath": "C:\\Users\\Logiciel 8\\source\\repos\\Training\\BusinessLogicLayer\\BusinessLogicLayer.csproj"
               },
-              "C:\\Users\\Logiciel 8\\source\\repos\\Training\\DataLayer\\DataLayer.csproj": {
-                "projectPath": "C:\\Users\\Logiciel 8\\source\\repos\\Training\\DataLayer\\DataLayer.csproj"
+              "C:\\Users\\Logiciel 8\\source\\repos\\Training\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\Logiciel 8\\source\\repos\\Training\\DataAccessLayer\\DataAccessLayer.csproj"
               }
             }
           }
@@ -175,9 +197,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "EntityFramework": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.4.4, )"
+              "version": "[3.1.8, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",

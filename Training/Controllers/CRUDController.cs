@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using BusinessLayer.CRUDOperations;
-using DataLayer.Context;
+using BusinessLogicLayer.CRUDOperations;
+using DataAccessLayer.Context;
 using Training.Models;
+using DataAccessLayer.Context;
+using BusinessLogicLayer.CRUDOperations;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Training.Controllers
@@ -17,7 +19,7 @@ namespace Training.Controllers
         private IRepositoryModel<Employee> _irepositoryModel;
         public CRUDController()
         {
-            _irepositoryModel = new Repositorymodel<Employee>();
+            _irepositoryModel = new RepositoryModel<Employee>();
         }
         [HttpGet]
         public IEnumerable<Employee> Get()
