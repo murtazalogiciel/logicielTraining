@@ -2,7 +2,7 @@
 
 namespace DataAccessLayer.Migrations
 {
-    public partial class initialCreate : Migration
+    public partial class murtaza : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

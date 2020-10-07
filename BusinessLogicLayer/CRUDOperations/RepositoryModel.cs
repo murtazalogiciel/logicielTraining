@@ -3,6 +3,7 @@ using DataAccessLayer.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,14 +11,15 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.CRUDOperations
 {
-    public class RepositoryModel<T> :IRepositoryModel<T> where T : class
-    {
-
+    public class RepositoryModel<T> :RepositoryModelReadOnly,IRepositoryModel<T> where T : class
+    { 
+       
         private EmployeeDbContext _dbContext;
+      
         private DbSet<T> _dbentity;
-        public RepositoryModel()
+        public RepositoryModel(EmployeeDbContext context) : base(context)
         {
-            _dbContext = new EmployeeDbContext();
+            _dbContext = context;
             _dbentity = _dbContext.Set<T>();
 
         }

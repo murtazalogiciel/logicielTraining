@@ -17,14 +17,16 @@ namespace Training.Controllers
     {
 
         private IRepositoryModel<Employee> _irepositoryModel;
-        public CRUDController()
+        public CRUDController(EmployeeDbContext edc)
         {
-            _irepositoryModel = new RepositoryModel<Employee>();
+            _irepositoryModel = new RepositoryModel<Employee>(edc);
         }
         [HttpGet]
         public IEnumerable<Employee> Get()
         {
-            return _irepositoryModel.getModel();
+            var list = _irepositoryModel.getModel().ToList();
+            return list;
+                //(/*from m in _irepositoryModel.getModel() select m);*/
         }
 
       

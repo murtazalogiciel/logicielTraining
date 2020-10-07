@@ -7,9 +7,9 @@ C:\Users\Logiciel 8\source\repos\Training\BusinessLogicLayer\obj\Debug\netcoreap
 C:\Users\Logiciel 8\source\repos\Training\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.pdb
 C:\Users\Logiciel 8\source\repos\Training\BusinessLogicLayer\bin\Debug\netcoreapp3.1\BusinessLogicLayer.runtimeconfig.json
 C:\Users\Logiciel 8\source\repos\Training\BusinessLogicLayer\bin\Debug\netcoreapp3.1\BusinessLogicLayer.runtimeconfig.dev.json
-C:\Users\Logiciel 8\source\repos\Training\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.csproj.CoreCompileInputs.cache
 C:\Users\Logiciel 8\source\repos\Training\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.genruntimeconfig.cache
 C:\Users\Logiciel 8\source\repos\Training\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.csprojAssemblyReference.cache
 C:\Users\Logiciel 8\source\repos\Training\BusinessLogicLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.dll
 C:\Users\Logiciel 8\source\repos\Training\BusinessLogicLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.pdb
 C:\Users\Logiciel 8\source\repos\Training\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.csproj.CopyComplete
+C:\Users\Logiciel 8\source\repos\Training\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.csproj.CoreCompileInputs.cache

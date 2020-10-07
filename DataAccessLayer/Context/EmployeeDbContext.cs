@@ -9,12 +9,14 @@ namespace DataAccessLayer.Context
 {
     public class EmployeeDbContext : DbContext
     {
-        public EmployeeDbContext(DbContextOptions options) : base(options)
+      
+
+        public EmployeeDbContext(DbContextOptions<EmployeeDbContext> options) : base(options)
         {
         }
-        public EmployeeDbContext()
-        {
-        }
-        DbSet<Employee> Employees { get; set; }
+      
+       
+
+       public virtual DbSet<Employee> Employees { get; set; }
     }
 }
