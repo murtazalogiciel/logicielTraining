@@ -1,8 +1,0 @@
-C:\Users\Logiciel 8\source\repos\Training\DataLayer\bin\Debug\netstandard2.0\DataLayer.deps.json
-C:\Users\Logiciel 8\source\repos\Training\DataLayer\bin\Debug\netstandard2.0\DataLayer.dll
-C:\Users\Logiciel 8\source\repos\Training\DataLayer\obj\Debug\netstandard2.0\DataLayer.AssemblyInfoInputs.cache
-C:\Users\Logiciel 8\source\repos\Training\DataLayer\obj\Debug\netstandard2.0\DataLayer.AssemblyInfo.cs
-C:\Users\Logiciel 8\source\repos\Training\DataLayer\bin\Debug\netstandard2.0\DataLayer.pdb
-C:\Users\Logiciel 8\source\repos\Training\DataLayer\obj\Debug\netstandard2.0\DataLayer.dll
-C:\Users\Logiciel 8\source\repos\Training\DataLayer\obj\Debug\netstandard2.0\DataLayer.pdb
-C:\Users\Logiciel 8\source\repos\Training\DataLayer\obj\Debug\netstandard2.0\DataLayer.csproj.CoreCompileInputs.cache
