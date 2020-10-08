@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.CRUDOperations
 {
-     public interface IRepositoryModel<T> where T : class
+     public interface IRepositoryModel
     {
-        IEnumerable<T> getModel();
-        T getModelById(int modelId);
-        void insertModel(T model);
-        void deleteModel(int modelId);
-        void updateModel(T model);
+        IEnumerable<T> getModel<T>() where T : class;
+        T getModelById<T>(int modelId) where T : class;
+        void insertModel<T>(T model) where T : class;
+        void deleteModel<T>(int modelId) where T : class;
+        void updateModel<T>(T model) where T : class;
         void Save();
     }
 }

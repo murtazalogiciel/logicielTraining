@@ -11,38 +11,46 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.CRUDOperations
 {
-    public class RepositoryModel<T> :RepositoryModelReadOnly,IRepositoryModel<T> where T : class
+    public class RepositoryModel: IRepositoryModel
     { 
        
         private EmployeeDbContext _dbContext;
       
-        private DbSet<T> _dbentity;
-        public RepositoryModel(EmployeeDbContext context) : base(context)
+
+
+        public RepositoryModel(EmployeeDbContext context)
         {
             _dbContext = context;
-            _dbentity = _dbContext.Set<T>();
+            //_dbentity = _dbContext.Set<T>();
 
         }
-        public void deleteModel(int modelId)
-        {
-            T model = _dbentity.Find(modelId);
-            _dbentity.Remove(model);
+       
 
+        public void deleteModel<T>(int modelId) where T : class
+        {
+            T model = _dbContext.Set<T>().Find(modelId);
+            _dbContext.Set<T>().Remove(model);
         }
 
-        public IEnumerable<T> getModel()
+        
+
+        public IEnumerable<T> getModel<T>() where T : class
         {
-            return _dbentity.ToList();
+            return _dbContext.Set<T>().ToList();
         }
 
-        public T getModelById(int modelId)
+       
+
+        public T getModelById<T>(int modelId) where T : class
         {
-            return _dbentity.Find(modelId);
+            return _dbContext.Set<T>().Find(modelId);
         }
 
-        public void insertModel(T model)
+      
+
+        public void insertModel<T>(T model) where T : class
         {
-            _dbentity.Add(model);
+           _dbContext.Set<T>().Add(model);
         }
 
         public void Save()
@@ -50,8 +58,10 @@ namespace BusinessLogicLayer.CRUDOperations
             _dbContext.SaveChanges();
         }
 
-        public void updateModel(T model)
+
+        public void updateModel<T>(T model) where T : class
         {
+            _dbContext.Entry(model).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
 
         }
     }

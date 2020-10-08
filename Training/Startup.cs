@@ -27,8 +27,9 @@ namespace Training
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-           
+         
             services.AddDbContext<EmployeeDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("myconn")));
+            services.AddScoped<IRepositoryModel, RepositoryModel>();
             services.AddControllersWithViews();
                   }
 

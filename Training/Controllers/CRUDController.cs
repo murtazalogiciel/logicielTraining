@@ -12,19 +12,20 @@ using BusinessLogicLayer.CRUDOperations;
 
 namespace Training.Controllers
 {
-  
+   
+
     public class CRUDController : ControllerBase
     {
 
-        private IRepositoryModel<Employee> _irepositoryModel;
-        public CRUDController(EmployeeDbContext edc)
+        private IRepositoryModel _irepositoryModel;
+        public CRUDController( IRepositoryModel irm)
         {
-            _irepositoryModel = new RepositoryModel<Employee>(edc);
+            _irepositoryModel = irm;
         }
         [HttpGet]
         public IEnumerable<Employee> Get()
         {
-            var list = _irepositoryModel.getModel().ToList();
+            var list = _irepositoryModel.getModel<Employee>().ToList();
             return list;
                 //(/*from m in _irepositoryModel.getModel() select m);*/
         }
@@ -33,14 +34,14 @@ namespace Training.Controllers
         [HttpGet("{id}")]
         public Employee Get(int id)
         {
-            return _irepositoryModel.getModelById(id);
+            return _irepositoryModel.getModelById<Employee>(id);
         }
 
        
         [HttpPost]
         public void Post([FromBody] Employee value)
         {
-            _irepositoryModel.insertModel(value);
+            _irepositoryModel.insertModel<Employee>(value);
             _irepositoryModel.Save();
         }
 
@@ -49,7 +50,7 @@ namespace Training.Controllers
         public void Put( [FromBody] Employee value)
         {
 
-            _irepositoryModel.updateModel(value);
+            _irepositoryModel.updateModel<Employee>(value);
             _irepositoryModel.Save();
         }
 
@@ -57,7 +58,7 @@ namespace Training.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _irepositoryModel.deleteModel(id);
+            _irepositoryModel.deleteModel<Employee>(id);
             _irepositoryModel.Save();
             
         }
