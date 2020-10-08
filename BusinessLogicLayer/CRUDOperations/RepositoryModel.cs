@@ -11,19 +11,20 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.CRUDOperations
 {
-    public class RepositoryModel: IRepositoryModel
+    public class RepositoryModel: RepositoryModelReadOnly, IRepositoryModel
     { 
        
         private EmployeeDbContext _dbContext;
       
 
 
-        public RepositoryModel(EmployeeDbContext context)
+        public RepositoryModel(EmployeeDbContext context) : base(context)
         {
             _dbContext = context;
             //_dbentity = _dbContext.Set<T>();
 
         }
+       
        
 
         public void deleteModel<T>(int modelId) where T : class
