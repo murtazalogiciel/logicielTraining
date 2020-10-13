@@ -10,7 +10,7 @@ namespace BusinessLogicLayer.CRUDOperations
         IEnumerable<T> getModel<T>() where T : class;
         T getModelById<T>(int modelId) where T : class;
         void insertModel<T>(T model) where T : class;
-        void deleteModel<T>(int modelId) where T : class;
+        Task deleteModel<T>(int modelId) where T : class;
         void updateModel<T>(T model) where T : class;
         void Save();
     }

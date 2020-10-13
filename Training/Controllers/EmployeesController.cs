@@ -7,15 +7,18 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DataAccessLayer.Context;
 using BusinessLogicLayer.CRUDOperations;
+using Microsoft.Extensions.Logging;
 
 namespace Training.Controllers
 {
     public class EmployeesController : Controller
     {
         private IRepositoryModel _irepositoryModel;
-        public EmployeesController(IRepositoryModel irm)
+        private ILogger<EmployeesController> _Logging;
+        public EmployeesController(IRepositoryModel irm, ILogger<EmployeesController> il)
         {
             _irepositoryModel = irm;
+            _Logging = il;
         }
 
         // GET: Employees
@@ -27,18 +30,29 @@ namespace Training.Controllers
         // GET: Employees/Details/5
         public async Task<IActionResult> Details(int id)
         {
-            if (id == null)
+            try
             {
-                return NotFound();
-            }
 
-            var employee = _irepositoryModel.getModelById<Employee>(id);
-            if (employee == null)
+                throw new Exception("DETAILS NOT FOUND");
+                if (id == null)
+                {
+                    return NotFound();
+                }
+
+                var employee = _irepositoryModel.getModelById<Employee>(id);
+                if (employee == null)
+                {
+                    return NotFound();
+                }
+
+                return View(employee);
+                    }
+            catch(Exception ex)
             {
-                return NotFound();
+                _Logging.LogError($"There was a error related to {ex.Message}");
+                ViewBag.Title = ex.Message;
+                return View("Error");
             }
-
-            return View(employee);
         }
 
         // GET: Employees/Create
@@ -112,11 +126,11 @@ namespace Training.Controllers
         }
 
         // GET: Employees/Delete/5
-        public  IActionResult Delete(int id)
+        public IActionResult Delete(int id)
         {
             
 
-            var employee = _irepositoryModel.getModelById<Employee>(id);
+            var employee =  _irepositoryModel.getModelById<Employee>(id);
             if (employee == null)
             {
                 return NotFound();
@@ -130,7 +144,7 @@ namespace Training.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            _irepositoryModel.deleteModel<Employee>(id);
+            await _irepositoryModel.deleteModel<Employee>(id);
             _irepositoryModel.Save();
             return RedirectToAction(nameof(Index));
         }

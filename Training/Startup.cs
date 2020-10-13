@@ -39,6 +39,7 @@ namespace Training
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+               
             }
             else
             {

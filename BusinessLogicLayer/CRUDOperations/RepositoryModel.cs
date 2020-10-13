@@ -27,9 +27,9 @@ namespace BusinessLogicLayer.CRUDOperations
        
        
 
-        public void deleteModel<T>(int modelId) where T : class
+        public async Task deleteModel<T>(int modelId) where T : class
         {
-            T model = _dbContext.Set<T>().Find(modelId);
+            T model = await _dbContext.Set<T>().FindAsync(modelId);
             _dbContext.Set<T>().Remove(model);
         }
 

@@ -35,6 +35,45 @@ namespace DataAccessLayer.Migrations
 
                     b.ToTable("Employees");
                 });
+
+            modelBuilder.Entity("DataAccessLayer.Context.Product", b =>
+                {
+                    b.Property<int>("productId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("productCategoryName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("productContact")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("productName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("productId");
+
+                    b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("DataAccessLayer.DbModels.ProductCategory", b =>
+                {
+                    b.Property<int>("productCategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("productCategoryContact")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("productCategoryName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("productCategoryId");
+
+                    b.ToTable("ProductCategories");
+                });
 #pragma warning restore 612, 618
         }
     }

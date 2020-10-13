@@ -1,4 +1,5 @@
 ﻿
+using DataAccessLayer.DbModels;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -20,5 +21,8 @@ namespace DataAccessLayer.Context
         }
 
         public virtual DbSet<Employee> Employees { get; set; }
+
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<ProductCategory> ProductCategories { get; set; }
     }
 }

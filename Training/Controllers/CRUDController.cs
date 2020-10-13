@@ -8,6 +8,7 @@ using DataAccessLayer.Context;
 using Training.Models;
 using DataAccessLayer.Context;
 using BusinessLogicLayer.CRUDOperations;
+using DataAccessLayer.DbModels;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Training.Controllers
@@ -23,10 +24,25 @@ namespace Training.Controllers
             _irepositoryModel = irm;
         }
         [HttpGet]
-        public IEnumerable<Employee> Get()
+        public IEnumerable<ProCat> Get()
         {
-            var list = _irepositoryModel.getModel<Employee>().ToList();
-            return list;
+         
+            var list = from listOfemployees in _irepositoryModel.getModel<Employee>()
+                       select listOfemployees;
+            var grp_list_of_products = _irepositoryModel.getModel<Product>()
+             .GroupBy(x => x.productCategoryName).ToDictionary(g => g.Key+"  Count:" +g.Count().ToString(), g => g.ToList());
+
+            var grp_list_of_products1 = _irepositoryModel.getModel<Product>()
+            .GroupBy(x => x.productCategoryName).
+            Select(group =>
+                        new ProCat
+                        {
+                            ProductCatName = group.Key,
+                            count = group.Count(),
+                            ProductList = group.ToList()
+                           
+                        });
+            return grp_list_of_products1;
                 //(/*from m in _irepositoryModel.getModel() select m);*/
         }
 
